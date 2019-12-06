@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block active%}
+    
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/event/create">Add An Event</a>
+      </li>
+    </ul>
+    
+{% endblock %}
+{% block body %}
+
+
+<h2 class="page-header">Add an Event</h2>
+{{form_start(form)}}
+{{form_widget(form)}}
+{{form_end(form)}}
+{% endblock %}
