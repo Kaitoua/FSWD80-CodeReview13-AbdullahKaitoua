@@ -180,4 +180,12 @@ public function detailsAction($id){
                    );
             return $this->redirectToRoute('event_list');
    }
+   /**
+    * @Route("/sort/{type}", name="sort_event")
+    */
+    public function sorteventAction(Request $request, $type){
+        $em = $this->getDoctrine()->getManager();
+        $events = $em->getRepository('AppBundle:Eventlist')->findByType($type);
+        return $this->render('event/sort.html.twig', array('events'=>$events, 'type' => $type));
+    }
 }

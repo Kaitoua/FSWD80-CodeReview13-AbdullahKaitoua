@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block active%}
+    
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/event/create">Add an Event</a>
+      </li>
+       <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Sort
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/">Show All</a>
+          <a class="dropdown-item" href="/sort/music">Music</a>
+          <a class="dropdown-item" href="/sort/movie">Movie</a>
+          <a class="dropdown-item" href="/sort/theater">Theater</a>
+          <a class="dropdown-item" href="/sort/sport">Sport</a>
+        </div>
+      </li>
+    </ul>
+    
+{% endblock %}
+{% block body %}
+
+       
+<div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+
+{% for event in events %}
+
+  <div class="col mb-4">
+    <div class="card">
+      <img src="{{event.img}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><span class="rounded-circle btn btn-dark"> {{event.type}}</span> {{event.name}} </h5>
+        <p class="card-text">{{event.edatetime|date('F j, Y, g:i a')}}</p>
+        <div>
+        	 <a href="/event/details/{{event.id}}" class="btn btn-success">View</a>
+          <a href="/event/edit/{{event.id}}" class="btn btn-default">Edit</a>
+           <a href="/event/delete/{{event.id}}" class="btn btn-danger">Delete</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+   
+          
+           
+{% endfor %}
+
+</div>
+{% endblock %}
