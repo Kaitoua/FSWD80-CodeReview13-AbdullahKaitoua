@@ -11,10 +11,10 @@
     <div class="card">
       <img src="{{event.img}}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title"><span class="rounded-circle btn btn-dark"> {{event.type}}</span> {{event.name}} </h5>
+        <h5 class="card-title"><span><a class="rounded-circle btn btn-dark" href="/sort/{{event.type}}"> {{event.type}}</a></span> {{event.name}} </h5>
         <p class="card-text">{{event.edatetime|date('F j, Y, g:i a')}}</p>
         <div>
-        	 <a href="/event/details/{{event.id}}" class="btn btn-success">View</a>
+           <a href="/event/details/{{event.id}}" class="btn btn-success">View</a>
           <a href="/event/edit/{{event.id}}" class="btn btn-default">Edit</a>
            <a href="/event/delete/{{event.id}}" class="btn btn-danger">Delete</a>
         </div>
@@ -22,6 +22,7 @@
       </div>
     </div>
   </div>
+   
    
           
            
