@@ -3,10 +3,15 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 400px;
-	background-position: center;
+	background-position: center bottom!important;
 	background-attachment: fixed;
 }
 
 .mynav{
 	color: black !important;
+}
+
+.card:hover{
+	width: 103%!important;
+	height: 103%!important;
 }
